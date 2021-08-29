@@ -30,10 +30,24 @@ function mapToNoChange(array) {
      return newArray
  }
 
- function reduceToTotal(array) {
-    let newArray = []
-    for(let i = 0; i < array.length; i ++ ) {  
-        array[i].sum   
+ function reduceToTotal(array, startingPoint=0) {
+    let sum = 0
+    for(let i = 0; i < array.length; i++) {
+        sum += array[i]
+        }
+   return (sum + startingPoint)
  }
 
- //array = [1, 2, 1, 4]
+ function reduceToAllTrue(array) {
+    for(let i = 0; i < array.length; i ++ ) {
+      if (!array[i]) return false
+    }
+    return true
+  }
+
+  function reduceToAnyTrue(array) {
+    for(let i = 0; i < array.length; i ++ ) {
+        if (array[i]) return true
+    }
+    return false
+}
